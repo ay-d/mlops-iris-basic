@@ -2,16 +2,12 @@ name: CI-Train-Model
 
 on:
   push:
-    branches: [ main ]
-    paths:
-      - "data/**"
-      - "src/**"
-      - "requirements.txt"
+    branches:
+      - main
 
 jobs:
   train:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
