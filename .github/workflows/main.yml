@@ -1,27 +1,18 @@
-name: CI-Train-Model
+name: Test-Workflow
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  train:
+  test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Run training script
-        run: |
-          python -m src.modelling
+      - name: Say hello
+        run: echo "Hello from GitHub Actions"
